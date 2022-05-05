@@ -8,6 +8,8 @@ import tkinter as tk
 from tkinter import filedialog
 import os
 import stat
+import base64
+import random
 
 window=Tk()
 window.title("Cryptography")
