@@ -1,36 +1,13 @@
 # encryption-and-decryption-python
 
 #imports/library used------------------------------------------modules--
-
-from cgitb import text
 from curses import window
-from stat import IO_REPARSE_TAG_SYMLINK
 from tkinter import *
-from tkinter import messagebox
-import ast
-from tkinter import font
-from tkinter import ttk
-from tkinter.font import BOLD
-from turtle import width
-from cgitb import text
-
-from tkinter import *
-import random
-import base64
-import smtplib
-import os
-import qrcode
 from stat import S_IREAD
-from tkinter import ttk
-from typing import Sized
 import tkinter as tk
 from tkinter import filedialog
-import cv2
 import os
 import stat
-from firebase import firebase 
-from curses.ascii import isalpha
-import keyboard 
 
 window=Tk()
 window.title("Cryptography")
