@@ -1,6 +1,5 @@
-# encryption-and-decryption-python
-
 #imports/library used------------------------------------------modules--
+
 from curses import window
 from tkinter import *
 from stat import S_IREAD
@@ -11,6 +10,8 @@ import stat
 import base64
 import random
 
+
+
 window=Tk()
 window.title("Cryptography")
 window.maxsize(width=1200,height=900)
@@ -18,7 +19,7 @@ window.minsize(width=1200,height=900)
 window.configure(bg='#fff')
 window.resizable(False,False)
 
-img= PhotoImage(file='encryption.png')
+img= PhotoImage(file='C:\\encryption\\encryption.png')
 Label(window, image=img, border=0, bg='white' ).place(x=50,y=40)
 
 #-----------------------variablesdeclared----------------------------------------
@@ -306,6 +307,22 @@ def getdatabase():
     key.set(u)
 
 
+def deleterecord():
+    from unittest import result
+    from firebase import firebase
+    firebase = firebase.FirebaseApplication("https://encryption-5713a-default-rtdb.asia-southeast1.firebasedatabase.app/", None)
+    p=firebase.get(f"https://encryption-5713a-default-rtdb.asia-southeast1.firebasedatabase.app//ui//{txtfilename.get()}", '')
+    pl=list(p)
+    nb=txtfilenum.get()
+    g=int(nb)
+    d=pl[g]
+   
+   
+   
+    from unittest import result
+    from firebase import firebase
+    firebase = firebase.FirebaseApplication("https://encryption-5713a-default-rtdb.asia-southeast1.firebasedatabase.app/", None)
+    firebase.delete(f"https://encryption-5713a-default-rtdb.asia-southeast1.firebasedatabase.app//ui//{txtfilename.get()}",f'{d}' )
 
 
 
@@ -328,11 +345,13 @@ btngetdatabase=Button(width=15,pady=7, text='getdata', bg='#57a1f8',fg= 'white',
 
 #-------------------------------------------------------------------------------------------------------------------------------
 
-imgbtn=PhotoImage(file='reset.png')
+btndeleterecord=Button(width=15,pady=7, text='Delete Record', bg='#57a1f8',fg= 'white', border=0, command=lambda:deleterecord()).place(x=940,y=225)
 
-labimg=Label(image='C:\\reset.png').pack(pady=500)
-
-btnreset= Button(width=100, pady=7, text='h', border=6, command= lambda:Reset()).place(x=50,y=500)
+btnreset= Button(width=60, pady=7, text= 'Reset',font=2, border=0, bg='#ab23ff',fg='white', command= lambda:Reset()).place(x=0,y=663)
+ 
+#--------------------------------------------------------------------------------------------------------------------------------
+ 
+btnexit= Button(width=60, pady=7, text= 'Exit', font=2, border=0, bg='#ab23ff',fg='white', command= lambda:qExit()).place(x=675,y=663)
 
 
 
